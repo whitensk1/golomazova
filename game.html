@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Поймай коррупционера — мини-игра</title>
+  <meta name="description" content="Простая мини-игра: лови абстрактные фигуры коррупции. Без намёков на личности." />
+  <meta name="theme-color" content="#00a098" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/game.css?v=1" />
+</head>
+<body>
+  <a class="skip" href="#game">К игре</a>
+
+  <header class="game-top">
+    <a class="back" href="index.html">← На сайт</a>
+    <div class="game-top__copy">
+      <p class="kicker">Мини-игра · без намёков на личности</p>
+      <h1>Поймай коррупционера</h1>
+      <p class="lead">Кликай по фигурам с портфелем и конвертом — набирай очки за прозрачность. Это шуточная аркада, не про конкретных людей.</p>
+    </div>
+  </header>
+
+  <main id="game" class="game-shell">
+    <div class="hud" aria-live="polite">
+      <div class="hud-item"><span>Счёт</span><b id="score">0</b></div>
+      <div class="hud-item"><span>Время</span><b id="time">30</b></div>
+      <div class="hud-item"><span>Рекорд</span><b id="best">0</b></div>
+    </div>
+
+    <div class="stage-wrap">
+      <canvas id="stage" width="900" height="520" role="img" aria-label="Игровое поле"></canvas>
+      <div class="overlay" id="overlay">
+        <div class="overlay-card">
+          <h2 id="overlay-title">Готовы?</h2>
+          <p id="overlay-text">У вас 30 секунд. Ловите серые фигуры с портфелем. Не кликайте по зелёным «честным» — минус очки.</p>
+          <button type="button" class="btn" id="start-btn">Начать</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="hint">На телефоне — тапайте. На компьютере — кликайте мышью.</p>
+  </main>
+
+  <footer class="game-foot">
+    <a href="index.html">Виктория Голомазова</a>
+    ·
+    <a href="index.html#party">Новые люди</a>
+  </footer>
+
+  <script src="js/game.js?v=1" defer></script>
+</body>
+</html>

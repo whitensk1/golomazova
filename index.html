@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=party15" />
+  <link rel="stylesheet" href="css/styles.css?v=party16" />
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
@@ -22,6 +22,8 @@
     <a href="#about">О себе</a>
     <a href="#projects">Проекты</a>
     <a href="#party">Партия</a>
+    <a href="game.html">Игра «Поймай коррупционера»</a>
+    <a class="nav-game-short" href="game.html" title="Игра «Поймай коррупционера»">Игра</a>
     <a href="variants/">Варианты</a>
     <a class="is-accent" href="https://vk.ru/vic_project" target="_blank" rel="noopener">Написать</a>
   </nav>
@@ -75,6 +77,26 @@
         </div>
       </div>
     </div>
+
+    <section class="countdown" id="elections" aria-label="До выборов в Белокурихе">
+      <div class="container countdown-inner">
+        <div class="countdown-copy">
+          <p class="countdown-kicker">Белокуриха · Алтайский край</p>
+          <h2>До выборов</h2>
+          <p class="countdown-note">
+            Голосование по выборам депутатов Белокурихинского городского Совета —
+            <strong>20&nbsp;сентября&nbsp;2026</strong>
+            (в краевой кампании также дни&nbsp;18–20&nbsp;сентября).
+          </p>
+        </div>
+        <div class="countdown-grid" id="countdown-grid" aria-live="polite">
+          <div class="countdown-cell"><b id="cd-days">—</b><span>дней</span></div>
+          <div class="countdown-cell"><b id="cd-hours">—</b><span>часов</span></div>
+          <div class="countdown-cell"><b id="cd-mins">—</b><span>минут</span></div>
+          <div class="countdown-cell"><b id="cd-secs">—</b><span>секунд</span></div>
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="about">
       <div class="container">
@@ -282,5 +304,6 @@
 
   <script src="js/parallax.js?v=1" defer></script>
   <script src="js/contact.js?v=1" defer></script>
+  <script src="js/countdown.js?v=1" defer></script>
 </body>
 </html>
