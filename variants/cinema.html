@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Виктория Голомазова · Кино</title>
+  <meta name="description" content="Виктория Голомазова — общественный деятель, член партии «Новые люди», кандидат в депутаты." />
+  <meta name="theme-color" content="#050608" />
+  <meta name="color-scheme" content="dark" />
+  <meta property="og:title" content="Виктория Голомазова" />
+  <meta property="og:image" content="../media/photos/portrait-hero.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/cinema.css" />
+  <link rel="stylesheet" href="css/switcher.css" />
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <div class="cursor" aria-hidden="true">
+    <span class="cursor__ring"></span>
+    <span class="cursor__dot"></span>
+  </div>
+
+  <canvas class="grain" id="grain" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="letterbox" aria-hidden="true">
+    <div class="letterbox__bar letterbox__bar--top"></div>
+    <div class="letterbox__bar letterbox__bar--bottom"></div>
+  </div>
+
+  <nav class="nav" aria-label="Разделы">
+    <a class="is-on" href="#intro" data-nav="intro">Вступление</a>
+    <a href="#facts" data-nav="facts">Факты</a>
+    <a href="#projects" data-nav="projects">Проекты</a>
+    <a class="is-accent" href="#contact" data-nav="contact">Связь</a>
+  </nav>
+
+  <aside class="take" aria-live="polite">
+    <span class="take__rec" aria-hidden="true"></span>
+    <span class="take__id" id="take-id">01</span>
+    <span class="take__name" id="take-name">Вступление</span>
+  </aside>
+
+  <ol class="chap-dots" aria-label="Главы">
+    <li><a class="is-on" href="#intro" data-nav="intro" aria-label="Вступление"></a></li>
+    <li><a href="#facts" data-nav="facts" aria-label="Факты"></a></li>
+    <li><a href="#projects" data-nav="projects" aria-label="Проекты"></a></li>
+    <li><a href="#contact" data-nav="contact" aria-label="Связь"></a></li>
+  </ol>
+
+  <main id="main">
+    <!-- 01 INTRO -->
+    <section
+      class="chapter chapter--intro"
+      id="intro"
+      data-chapter="intro"
+      data-n="01"
+      data-label="Вступление"
+    >
+      <div class="chapter-scene js-fade">
+        <div class="shell intro-grid">
+          <div class="intro-copy">
+            <p class="kicker"><span class="kicker__line" aria-hidden="true"></span>Новые люди · кандидат</p>
+            <h1>Виктория<br />Голомазова</h1>
+            <p class="lede">Соединяю людей, идеи и ресурсы — чтобы проекты становились делами.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary js-magnet" href="#projects">Смотреть проекты</a>
+              <a class="btn btn-ghost js-magnet" href="https://vk.ru/vic_project" target="_blank" rel="noopener">ВКонтакте</a>
+            </div>
+          </div>
+
+          <figure class="portrait" id="portrait">
+            <div class="portrait__rim">
+              <div class="portrait__stage" id="spot-stage">
+                <div class="portrait__ken" data-ken>
+                  <img
+                    class="portrait__img"
+                    src="../media/photos/portrait-hero.jpg"
+                    alt="Виктория Голомазова"
+                    width="933"
+                    height="1400"
+                    fetchpriority="high"
+                    decoding="async"
+                  />
+                </div>
+                <div class="portrait__spot" aria-hidden="true"></div>
+                <div class="portrait__bloom" aria-hidden="true"></div>
+                <div class="portrait__edge" aria-hidden="true"></div>
+              </div>
+            </div>
+            <figcaption class="portrait__cap">
+              <span>Кадр 01</span>
+              <span>Студийный портрет</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 FACTS -->
+    <section
+      class="chapter chapter--facts"
+      id="facts"
+      data-chapter="facts"
+      data-n="02"
+      data-label="Факты"
+    >
+      <div class="chapter-scene js-fade">
+        <div class="shell">
+          <header class="chapter-head">
+            <p class="kicker"><span class="kicker__line" aria-hidden="true"></span>Кадр 02</p>
+            <h2>Коротко и по делу</h2>
+            <p class="chapter-lead">Инвестиции, общественные проекты и помощь бизнесу в Китае. Без лишнего шума — только то, что уже в работе.</p>
+          </header>
+
+          <div class="pills" aria-label="Коротко о Виктории">
+            <article class="pill js-magnet">
+              <span class="pill__label">Возраст</span>
+              <b>22 года</b>
+              <span class="pill__note">Уже веду общественные проекты</span>
+            </article>
+            <article class="pill js-magnet">
+              <span class="pill__label">Россия и Китай</span>
+              <b>Связываю на практике</b>
+              <span class="pill__note">Помогаю бизнесу и проектам снять барьеры</span>
+            </article>
+            <article class="pill js-magnet">
+              <span class="pill__label">Что делаю</span>
+              <b>6 проектов</b>
+              <span class="pill__note">От обменов студентами до цифровых решений</span>
+            </article>
+            <article class="pill js-magnet">
+              <span class="pill__label">Спорт</span>
+              <b>Лыжные гонки</b>
+              <span class="pill__note">Тренируюсь к сдаче норматива</span>
+            </article>
+            <article class="pill js-magnet">
+              <span class="pill__label">Фокус</span>
+              <b>Масштаб</b>
+              <span class="pill__note">Проекты и «министерство добрых дел»</span>
+            </article>
+            <article class="pill js-magnet">
+              <span class="pill__label">Партия</span>
+              <b>Новые люди</b>
+              <span class="pill__note">Член партии, кандидат в депутаты</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 PROJECTS -->
+    <section
+      class="chapter chapter--projects"
+      id="projects"
+      data-chapter="projects"
+      data-n="03"
+      data-label="Проекты"
+    >
+      <div class="shell">
+        <header class="chapter-head chapter-head--reel">
+          <p class="kicker"><span class="kicker__line" aria-hidden="true"></span>Кадр 03</p>
+          <h2>Проекты</h2>
+          <p class="chapter-lead">Шесть направлений. Карточки складываются, как кадры в монтаже.</p>
+        </header>
+
+        <div class="reel" id="reel">
+          <article class="frame" data-frame="0" style="--i: 0">
+            <div class="frame__film">
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__media">
+                <img src="../media/illustrations/projects/01-exchange.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+              </div>
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__meta">
+                <span class="frame__n">01</span>
+                <div>
+                  <h3>Студенческий обмен</h3>
+                  <p>С гарантией трудоустройства и стажировками</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="frame" data-frame="1" style="--i: 1">
+            <div class="frame__film">
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__media">
+                <img src="../media/illustrations/projects/02-china-center.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+              </div>
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__meta">
+                <span class="frame__n">02</span>
+                <div>
+                  <h3>Культурно-деловой центр Китая</h3>
+                  <p>Барнаул · Новосибирск · Белокуриха</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="frame" data-frame="2" style="--i: 2">
+            <div class="frame__film">
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__media">
+                <img src="../media/illustrations/projects/03-xian-house.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+              </div>
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__meta">
+                <span class="frame__n">03</span>
+                <div>
+                  <h3>Русский дом в Сиане</h3>
+                  <p>Город-побратим</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="frame" data-frame="3" style="--i: 3">
+            <div class="frame__film">
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__media">
+                <img src="../media/illustrations/projects/04-transparency.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+              </div>
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__meta">
+                <span class="frame__n">04</span>
+                <div>
+                  <h3>Прозрачность депутатов</h3>
+                  <p>Цифра для быстрых решений на местах</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="frame" data-frame="4" style="--i: 4">
+            <div class="frame__film">
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__media">
+                <img src="../media/illustrations/projects/05-drones.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+              </div>
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__meta">
+                <span class="frame__n">05</span>
+                <div>
+                  <h3>БАС</h3>
+                  <p>Беспилотники для гражданских задач</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="frame" data-frame="5" style="--i: 5">
+            <div class="frame__film">
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__media">
+                <img src="../media/illustrations/projects/06-business.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+              </div>
+              <div class="frame__sprockets" aria-hidden="true"></div>
+              <div class="frame__meta">
+                <span class="frame__n">06</span>
+                <div>
+                  <h3>Бизнес с Китаем</h3>
+                  <p>Язык + административный ресурс — снимаю барьеры</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 CONTACT -->
+    <section
+      class="chapter chapter--contact"
+      id="contact"
+      data-chapter="contact"
+      data-n="04"
+      data-label="Связь"
+    >
+      <div class="chapter-scene js-fade">
+        <div class="shell contact-grid">
+          <header class="chapter-head">
+            <p class="kicker"><span class="kicker__line" aria-hidden="true"></span>Кадр 04</p>
+            <h2>Давайте на связь</h2>
+            <p class="chapter-lead">Проекты, общественная работа, сотрудничество — напишите удобным способом.</p>
+          </header>
+
+          <div class="contact-card">
+            <div class="social-row" aria-label="Мессенджеры">
+              <a class="social-btn js-magnet" href="https://vk.ru/vic_project" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.6 16.8h.9s.3-.03.4-.2c.1-.1.1-.3.1-.3s0-1.1.5-1.3c.5-.2 1.2.9 1.9 1.4.5.3.9.3.9.3l1.9-.03s1-.06.5-.8c-.04-.06-.3-.6-1.4-1.7-1.2-1.1-1-.9.4-2.8.8-1.2 1.2-1.9 1.1-2.2-.1-.3-.6-.2-.6-.2h-1.7s-.1 0-.2.05c-.1.05-.2.2-.2.2s-.3.8-.7 1.5c-.9 1.4-1.2 1.5-1.4 1.4-.4-.2-.3-.7-.3-1.1 0-1.2.2-1.7-.4-1.8-.2 0-.3 0-.5-.01-.4 0-1.1.01-1.7.4-.4.3-.6.8-.6.8s-.1.2.1.2c.2 0 .5-.1.7.3.2.5.2 1.2.2 1.2s.1.8-.3.9c-.2.1-.6-.1-1.3-1.1-.6-.8-1-1.7-1-1.7s-.1-.2-.2-.3c-.1-.1-.3-.1-.3-.1H6.7s-.5.01-.3.4c.1.3.6 1.4 1.9 2.9 1.7 1.9 3.4 2.9 3.4 2.9z"/></svg>
+                ВКонтакте
+              </a>
+              <span class="social-btn is-soon" title="Ссылку добавим позже" role="text">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.14 6.44 2.14 11.9c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.14-2.9-7.02zM12.04 20.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.88 2.4 1 2.56.12.17 1.75 2.67 4.23 3.74 2.49 1.07 2.49.71 2.94.67.45-.05 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.17-.47-.29z"/></svg>
+                WhatsApp
+              </span>
+              <span class="social-btn is-soon" title="Ссылку добавим позже" role="text">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.1c-.2-.2-.5-.2-.8-.1L2.8 11.3c-.4.2-.5.6-.3 1 .1.2.3.3.5.4l4.6 1.5 1.8 5.5c.1.3.4.5.7.5h.1c.3 0 .5-.1.7-.4l2.6-3.4 4.7 3.5c.2.1.4.2.6.2.1 0 .3 0 .4-.1.3-.1.5-.4.5-.8l2.1-14.2c0-.3-.1-.6-.4-.7zM9.3 13.8l8.6-5.4-6.7 6.5-.3.3-.4 2.5-1.2-3.9zm2.2 5.1.3-1.9 1.3 1-1.6.9zm7.4-1.1-4.3-3.2 6.1-5.9-1.8 9.1z"/></svg>
+                Telegram
+              </span>
+            </div>
+
+            <div class="party">
+              <img class="party__logo" src="../media/brand/newpeople-logo.jpg" alt="Логотип партии «Новые люди»" width="280" height="280" loading="lazy" />
+              <div>
+                <h3>Новые люди</h3>
+                <p>Член партии. Акцент сайта — на Виктории; официальная программа партии — по ссылкам.</p>
+                <div class="party__links">
+                  <a href="https://newpeople.ru/" target="_blank" rel="noopener">Сайт партии</a>
+                  <a href="https://newpeople.ru/program" target="_blank" rel="noopener">Программа</a>
+                  <a href="https://vk.ru/party.newpeople" target="_blank" rel="noopener">Партия в VK</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3>Форма обратной связи</h3>
+            <p class="form-lead">Оставьте сообщение — откроется черновик письма или VK.</p>
+            <form id="contact-form" novalidate>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="cf-name">Имя</label>
+                  <input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться" />
+                </div>
+                <div class="form-field">
+                  <label for="cf-contact">Телефон или email</label>
+                  <input id="cf-contact" name="contact" type="text" autocomplete="email" required placeholder="+7… или mail@" />
+                </div>
+                <div class="form-field full">
+                  <label for="cf-msg">Сообщение</label>
+                  <textarea id="cf-msg" name="message" required placeholder="Коротко о запросе"></textarea>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-primary js-magnet" type="submit">Отправить</button>
+                <p class="form-note">Пока без сервера: уйдёт через mailto / VK.</p>
+              </div>
+              <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="shell foot-inner">
+      <div>© Виктория Голомазова</div>
+      <div>
+        <a href="https://vk.ru/vic_project" target="_blank" rel="noopener">VK</a>
+        ·
+        <a href="https://newpeople.ru/" target="_blank" rel="noopener">Новые люди</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cinema.js" defer></script>
+  <script src="js/switcher.js" defer></script>
+</body>
+</html>

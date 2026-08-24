@@ -1,0 +1,61 @@
+/* Shared floating switcher for design variants */
+.v-switch {
+  position: fixed;
+  z-index: 9999;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(12px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: min(220px, calc(100vw - 24px));
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(15, 20, 28, 0.88);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  font-family: Inter, system-ui, sans-serif;
+}
+.v-switch__label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  padding: 0 4px 2px;
+}
+.v-switch__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.v-switch a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  font-weight: 650;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.v-switch a:hover { background: rgba(255, 255, 255, 0.1); }
+.v-switch a.is-on {
+  background: #00a098;
+  color: #fff;
+}
+@media (max-width: 520px) {
+  .v-switch {
+    left: 10px;
+    right: 10px;
+    max-width: none;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .v-switch__list { flex-direction: row; flex-wrap: nowrap; }
+  .v-switch a { white-space: nowrap; }
+}

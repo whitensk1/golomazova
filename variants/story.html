@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Виктория Голомазова — история</title>
+  <meta name="description" content="Виктория Голомазова — общественный деятель, член партии «Новые люди», кандидат в депутаты. Горизонтальная история: факты, проекты, контакты." />
+  <meta name="theme-color" content="#00a098" />
+  <meta property="og:title" content="Виктория Голомазова — история" />
+  <meta property="og:image" content="../media/photos/portrait-hero.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/story.css" />
+  <link rel="stylesheet" href="css/switcher.css" />
+</head>
+<body>
+  <a class="skip" href="#journey">К содержанию</a>
+
+  <div
+    class="progress"
+    role="progressbar"
+    aria-label="Прогресс истории"
+    aria-valuemin="0"
+    aria-valuemax="8"
+    aria-valuenow="0"
+  >
+    <div class="progress__fill"></div>
+    <div class="progress__ticks" aria-hidden="true"></div>
+  </div>
+
+  <div class="nav-left">
+    <a class="nav-home" href="../index.html">К сайту</a>
+    <button class="nav-hint js-prev" type="button" disabled aria-label="Предыдущая глава">
+      <span aria-hidden="true">←</span>
+      Назад
+    </button>
+  </div>
+
+  <button class="nav-next js-next" type="button" aria-label="Следующая глава">
+    <span>Далее</span>
+    <span aria-hidden="true">→</span>
+  </button>
+
+  <nav class="dots" aria-label="Главы истории">
+    <a class="dot is-on" href="#hero" data-go="hero" aria-label="1. Знакомство" aria-current="true">1</a>
+    <a class="dot" href="#facts" data-go="facts" aria-label="2. Факты">2</a>
+    <a class="dot" href="#project-1" data-go="project-1" aria-label="3. Студенческий обмен">3</a>
+    <a class="dot" href="#project-2" data-go="project-2" aria-label="4. Центр Китая">4</a>
+    <a class="dot" href="#project-3" data-go="project-3" aria-label="5. Русский дом">5</a>
+    <a class="dot" href="#project-4" data-go="project-4" aria-label="6. Прозрачность">6</a>
+    <a class="dot" href="#project-5" data-go="project-5" aria-label="7. БАС">7</a>
+    <a class="dot" href="#project-6" data-go="project-6" aria-label="8. Бизнес с Китаем">8</a>
+    <a class="dot" href="#contact" data-go="contact" aria-label="9. Связь">9</a>
+  </nav>
+
+  <p class="kbd-hint" aria-hidden="true">Клавиши <b>←</b> <b>→</b></p>
+  <p class="sr-only" id="chapter-live" aria-live="polite"></p>
+
+  <main class="track js-track" id="journey" tabindex="0">
+
+    <!-- 1 · Hero -->
+    <section class="panel is-active" id="hero" data-title="Знакомство">
+      <p class="panel-index"><span>01</span> / 09</p>
+      <div class="stage hero">
+        <div class="hero__copy">
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> Глава 01 · Знакомство</p>
+          <p class="badge">Новые люди · кандидат в депутаты</p>
+          <h1>Виктория<br />Голомазова</h1>
+          <p class="lead">Соединяю людей, идеи и ресурсы — чтобы проекты становились делами.</p>
+          <div class="actions">
+            <button class="btn btn-primary" type="button" data-go="project-1">К проектам</button>
+            <a class="btn btn-ghost" href="https://vk.ru/vic_project" target="_blank" rel="noopener">ВКонтакте</a>
+          </div>
+          <p class="scroll-hint">
+            <span class="hint-h">Листайте вправо или крутите колесо <i aria-hidden="true">→</i></span>
+            <span class="hint-v">Листайте вниз <i aria-hidden="true">↓</i></span>
+          </p>
+        </div>
+        <figure class="hero__photo">
+          <img
+            src="../media/photos/portrait-hero.jpg"
+            alt="Виктория Голомазова"
+            width="933"
+            height="1400"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- 2 · Facts -->
+    <section class="panel" id="facts" data-title="Факты">
+      <p class="panel-index"><span>02</span> / 09</p>
+      <div class="stage facts">
+        <header class="stage-head">
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> Глава 02 · Коротко</p>
+          <h2>Факты без лишнего</h2>
+          <p class="stage-lead">Только то, что есть в открытых материалах и брифе. Без выдуманных цифр и дат выборов.</p>
+        </header>
+
+        <div class="fact-grid">
+          <article class="fact">
+            <span class="fact__label">Возраст</span>
+            <b>22 года</b>
+            <p>Уже веду общественные проекты</p>
+          </article>
+          <article class="fact">
+            <span class="fact__label">Россия и Китай</span>
+            <b>Связываю на практике</b>
+            <p>Помогаю бизнесу и проектам снять барьеры</p>
+          </article>
+          <article class="fact">
+            <span class="fact__label">Что делаю</span>
+            <b>6 проектов</b>
+            <p>От обменов студентами до цифровых решений</p>
+          </article>
+          <article class="fact">
+            <span class="fact__label">Спорт</span>
+            <b>Лыжные гонки</b>
+            <p>Тренируюсь к сдаче норматива</p>
+          </article>
+        </div>
+
+        <div class="facts-extra">
+          <article class="fact fact--wide">
+            <span class="fact__label">Фокус</span>
+            <b>Люди, идеи, ресурсы</b>
+            <p>Инвестиции, общественные проекты и помощь бизнесу в Китае. «Министерство добрых дел».</p>
+          </article>
+          <aside class="party-inline">
+            <img
+              class="party-inline__logo"
+              src="../media/brand/newpeople-logo.jpg"
+              alt="Партия «Новые люди»"
+              width="160"
+              height="160"
+              loading="lazy"
+              decoding="async"
+            />
+            <div>
+              <span class="fact__label">Партия</span>
+              <b>Новые люди</b>
+              <p>Член партии. Акцент этой истории — на делах Виктории; программа партии — по ссылкам.</p>
+              <div class="party-inline__links">
+                <a href="https://newpeople.ru/" target="_blank" rel="noopener">Сайт партии</a>
+                <a href="https://newpeople.ru/program" target="_blank" rel="noopener">Программа</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · Project 01 -->
+    <section class="panel project" id="project-1" data-title="Студенческий обмен" data-accent="teal">
+      <p class="panel-index"><span>03</span> / 09</p>
+      <div class="stage project-stage">
+        <figure class="project-visual">
+          <img
+            src="../media/illustrations/projects/01-exchange.jpg"
+            alt=""
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="project-copy">
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> Проект 01 из 06</p>
+          <p class="ghost-num" aria-hidden="true">01</p>
+          <h2>Студенческий обмен</h2>
+          <p class="lead">С гарантией трудоустройства и стажировками.</p>
+          <p class="body">Связать учёбу и практику — чтобы обмен заканчивался работой, а не только впечатлениями.</p>
+          <button class="btn btn-primary" type="button" data-go="project-2">Следующий проект</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · Project 02 -->
+    <section class="panel project is-flip" id="project-2" data-title="Центр Китая" data-accent="orange">
+      <p class="panel-index"><span>04</span> / 09</p>
+      <div class="stage project-stage">
+        <figure class="project-visual">
+          <img
+            src="../media/illustrations/projects/02-china-center.jpg"
+            alt=""
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="project-copy">
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> Проект 02 из 06</p>
+          <p class="ghost-num" aria-hidden="true">02</p>
+          <h2>Культурно-деловой центр Китая</h2>
+          <p class="lead">Барнаул · Новосибирск · Белокуриха</p>
+          <p class="body">Площадки для культуры и деловых связей. В планах — Индия и Иран.</p>
+          <button class="btn btn-primary" type="button" data-go="project-3">Следующий проект</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · Project 03 -->
+    <section class="panel project" id="project-3" data-title="Русский дом" data-accent="teal">
+      <p class="panel-index"><span>05</span> / 09</p>
+      <div class="stage project-stage">
+        <figure class="project-visual">
+          <img
+            src="../media/illustrations/projects/03-xian-house.jpg"
+            alt=""
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="project-copy">
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> Проект 03 из 06</p>
+          <p class="ghost-num" aria-hidden="true">03</p>
+          <h2>Русский дом в Сиане</h2>
+          <p class="lead">Город-побратим</p>
+          <p class="body">Русский дом в Сиане — точка присутствия и совместных дел с городом-побратимом.</p>
+          <button class="btn btn-primary" type="button" data-go="project-4">Следующий проект</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · Project 04 -->
+    <section class="panel project is-flip" id="project-4" data-title="Прозрачность" data-accent="green">
+      <p class="panel-index"><span>06</span> / 09</p>
+      <div class="stage project-stage">
+        <figure class="project-visual">
+          <img
+            src="../media/illustrations/projects/04-transparency.jpg"
+            alt=""
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="project-copy">
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> Проект 04 из 06</p>
+          <p class="ghost-num" aria-hidden="true">04</p>
+          <h2>Прозрачность депутатов</h2>
+          <p class="lead">Цифра для быстрых решений на местах</p>
+          <p class="body">Цифровая система прозрачности работы депутатов и решения местных проблем.</p>
+          <button class="btn btn-primary" type="button" data-go="project-5">Следующий проект</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · Project 05 -->
+    <section class="panel project" id="project-5" data-title="БАС" data-accent="teal">
+      <p class="panel-index"><span>07</span> / 09</p>
+      <div class="stage project-stage">
+        <figure class="project-visual">
+          <img
+            src="../media/illustrations/projects/05-drones.jpg"
+            alt=""
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="project-copy">
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> Проект 05 из 06</p>
+          <p class="ghost-num" aria-hidden="true">05</p>
+          <h2>БАС</h2>
+          <p class="lead">Беспилотники для гражданских задач</p>
+          <p class="body">Развитие беспилотных авиасистем в гражданских целях.</p>
+          <button class="btn btn-primary" type="button" data-go="project-6">Следующий проект</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · Project 06 -->
+    <section class="panel project is-flip" id="project-6" data-title="Бизнес с Китаем" data-accent="orange">
+      <p class="panel-index"><span>08</span> / 09</p>
+      <div class="stage project-stage">
+        <figure class="project-visual">
+          <img
+            src="../media/illustrations/projects/06-business.jpg"
+            alt=""
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <div class="project-copy">
+          <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> Проект 06 из 06</p>
+          <p class="ghost-num" aria-hidden="true">06</p>
+          <h2>Бизнес с Китаем</h2>
+          <p class="lead">Язык + административный ресурс</p>
+          <p class="body">Снимаю барьеры для проектов и бизнеса: язык и административный ресурс на практике.</p>
+          <button class="btn btn-primary" type="button" data-go="contact">К контактам</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 · Contact -->
+    <section class="panel" id="contact" data-title="Связь">
+      <p class="panel-index"><span>09</span> / 09</p>
+      <div class="stage contact">
+        <div class="contact-card">
+          <p class="kicker kicker--light"><span class="kicker-dot" aria-hidden="true"></span> Глава 09 · Финал</p>
+          <h2>Давайте на связь</h2>
+          <p>Проекты, общественная работа, сотрудничество — напишите удобным способом.</p>
+          <div class="social-row" aria-label="Мессенджеры">
+            <a class="social-btn" href="https://vk.ru/vic_project" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.6 16.8h.9s.3-.03.4-.2c.1-.1.1-.3.1-.3s0-1.1.5-1.3c.5-.2 1.2.9 1.9 1.4.5.3.9.3.9.3l1.9-.03s1-.06.5-.8c-.04-.06-.3-.6-1.4-1.7-1.2-1.1-1-.9.4-2.8.8-1.2 1.2-1.9 1.1-2.2-.1-.3-.6-.2-.6-.2h-1.7s-.1 0-.2.05c-.1.05-.2.2-.2.2s-.3.8-.7 1.5c-.9 1.4-1.2 1.5-1.4 1.4-.4-.2-.3-.7-.3-1.1 0-1.2.2-1.7-.4-1.8-.2 0-.3 0-.5-.01-.4 0-1.1.01-1.7.4-.4.3-.6.8-.6.8s-.1.2.1.2c.2 0 .5-.1.7.3.2.5.2 1.2.2 1.2s.1.8-.3.9c-.2.1-.6-.1-1.3-1.1-.6-.8-1-1.7-1-1.7s-.1-.2-.2-.3c-.1-.1-.3-.1-.3-.1H6.7s-.5.01-.3.4c.1.3.6 1.4 1.9 2.9 1.7 1.9 3.4 2.9 3.4 2.9z"/></svg>
+              ВКонтакте
+            </a>
+            <span class="social-btn is-soon" title="Ссылку добавим позже" role="text">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.14 6.44 2.14 11.9c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.14-2.9-7.02zM12.04 20.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.76-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.88 2.4 1 2.56.12.17 1.75 2.67 4.23 3.74 2.49 1.07 2.49.71 2.94.67.45-.05 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.17-.47-.29z"/></svg>
+              WhatsApp
+            </span>
+            <span class="social-btn is-soon" title="Ссылку добавим позже" role="text">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.9 4.1c-.2-.2-.5-.2-.8-.1L2.8 11.3c-.4.2-.5.6-.3 1 .1.2.3.3.5.4l4.6 1.5 1.8 5.5c.1.3.4.5.7.5h.1c.3 0 .5-.1.7-.4l2.6-3.4 4.7 3.5c.2.1.4.2.6.2.1 0 .3 0 .4-.1.3-.1.5-.4.5-.8l2.1-14.2c0-.3-.1-.6-.4-.7zM9.3 13.8l8.6-5.4-6.7 6.5-.3.3-.4 2.5-1.2-3.9zm2.2 5.1.3-1.9 1.3 1-1.6.9zm7.4-1.1-4.3-3.2 6.1-5.9-1.8 9.1z"/></svg>
+              Telegram
+            </span>
+          </div>
+          <div class="contact-foot">
+            <a href="https://newpeople.ru/" target="_blank" rel="noopener">Новые люди</a>
+            <span aria-hidden="true">·</span>
+            <a href="../index.html">Основной сайт</a>
+            <p>© Виктория Голомазова</p>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Форма обратной связи</h3>
+          <p class="form-lead">Оставьте сообщение — откроется черновик письма или VK.</p>
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="cf-name">Имя</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Как к вам обращаться" />
+              </div>
+              <div class="form-field">
+                <label for="cf-contact">Телефон или email</label>
+                <input id="cf-contact" name="contact" type="text" autocomplete="email" required placeholder="+7… или mail@" />
+              </div>
+              <div class="form-field full">
+                <label for="cf-msg">Сообщение</label>
+                <textarea id="cf-msg" name="message" required placeholder="Коротко о запросе"></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Отправить</button>
+              <p class="form-note">Пока без сервера: уйдёт через mailto / VK.</p>
+            </div>
+            <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/story.js"></script>
+  <script src="js/switcher.js"></script>
+</body>
+</html>
