@@ -1,21 +1,22 @@
-/* Victoria Golomazova — New People colors, object hero + parallax */
+/* Victoria Golomazova — New People brand (бирюза из логотипа) */
 :root {
-  --np-blue: #00a3e0;
-  --np-blue-deep: #0082b3;
+  /* Фирменная бирюза партии «Новые люди» */
+  --np-teal: #00a098;
+  --np-teal-deep: #007a74;
+  --np-blue: var(--np-teal);
+  --np-blue-deep: var(--np-teal-deep);
   --np-orange: #f5a623;
   --np-green: #7ac143;
   --np-ink: #1a2332;
-  --bg: #f7f9fc;
+  --bg: #f6f8f9;
   --surface: #ffffff;
   --muted: #5a6578;
   --line: rgba(26, 35, 50, 0.1);
   --font: "Inter", system-ui, -apple-system, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max: 1100px;
-  --hero-max: 1200px;   /* после этой ширины hero-контент не растягивается */
-  --portrait-w: 560px;  /* потолок портрета — крупный поясной кадр справа */
-  --hero-ink: #f4f7fb;
-  --hero-muted: rgba(244, 247, 251, 0.72);
+  --hero-max: 1180px;
+  --portrait-w: 480px; /* жёсткий потолок: дальше не растёт */
   --nav-h: 56px;
 }
 
@@ -29,6 +30,18 @@ body {
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+/* Мелкий векторный паттерн (ромбы «Новых людей») — едва заметный */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("../media/brand/pattern.svg");
+  background-size: 96px 96px;
+  background-repeat: repeat;
+  opacity: 0.07;
 }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
@@ -53,7 +66,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   padding: 6px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(0, 163, 224, 0.25);
+  border: 1px solid rgba(0, 160, 152, 0.28);
   box-shadow:
     0 10px 36px rgba(0, 130, 179, 0.14),
     0 0 0 1px rgba(245, 166, 35, 0.12);
@@ -70,7 +83,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   transition: background 0.2s, color 0.2s;
 }
 .nav a:hover {
-  background: rgba(0, 163, 224, 0.12);
+  background: rgba(0, 160, 152, 0.12);
   color: var(--np-ink);
 }
 .nav a.is-accent {
@@ -83,7 +96,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   .nav a { padding: 10px 12px; font-size: 12.5px; }
 }
 
-/* —— Hero: text LEFT + large black-studio portrait RIGHT —— */
+/* —— Hero: text LEFT + large studio portrait RIGHT (light, matches photo) —— */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -106,12 +119,9 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
     calc((100vw - var(--hero-max)) / 2)
   );
   overflow: hidden;
-  color: var(--hero-ink);
-  background:
-    radial-gradient(ellipse 55% 50% at 78% 40%, rgba(0, 163, 224, 0.18), transparent 60%),
-    radial-gradient(ellipse 40% 35% at 20% 75%, rgba(245, 166, 35, 0.1), transparent 55%),
-    radial-gradient(ellipse 35% 30% at 55% 90%, rgba(122, 193, 67, 0.07), transparent 50%),
-    #050608;
+  color: var(--np-ink);
+  /* фон под студийное фото — светлый, без затемнения */
+  background: #ffffff;
 }
 @media (max-width: 860px) {
   .hero {
@@ -139,36 +149,22 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   will-change: transform;
   pointer-events: none;
 }
-.hero-figure::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 42%;
-  width: 70%;
-  height: 55%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(ellipse at center, rgba(0, 163, 224, 0.35), transparent 70%);
-  filter: blur(28px);
-  z-index: -1;
-  pointer-events: none;
-}
 .hero-figure img {
   width: 100%;
   max-width: var(--portrait-w);
   height: auto;
-  max-height: min(88svh, 780px);
+  max-height: min(92svh, 860px);
   object-fit: contain;
-  object-position: center bottom;
-  filter: drop-shadow(0 0 40px rgba(0, 163, 224, 0.12));
+  object-position: bottom center;
 }
 @media (max-width: 860px) {
   .hero-figure {
-    width: min(440px, 92vw);
-    max-width: min(440px, 92vw);
+    width: min(var(--portrait-w), 88vw);
+    max-width: min(var(--portrait-w), 88vw);
     margin: 0 auto;
     justify-self: center;
   }
-  .hero-figure img { max-height: min(58svh, 520px); }
+  .hero-figure img { max-height: min(64svh, 560px); }
 }
 
 .hero-copy {
@@ -198,7 +194,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--np-blue);
+  color: var(--np-teal-deep);
 }
 .hero-kicker .dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -211,14 +207,14 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 0.96;
-  color: #fff;
+  color: var(--np-ink);
 }
 .hero-one {
   margin: 16px 0 0;
   font-size: clamp(1.05rem, 2.1vw, 1.28rem);
   font-weight: 550;
   line-height: 1.4;
-  color: var(--hero-muted);
+  color: var(--muted);
   max-width: 28ch;
 }
 @media (max-width: 860px) {
@@ -241,17 +237,18 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   font-size: 14px;
 }
 .btn-primary {
-  background: linear-gradient(135deg, var(--np-blue), var(--np-blue-deep));
+  background: linear-gradient(135deg, var(--np-teal), var(--np-teal-deep));
   color: #fff;
-  box-shadow: 0 10px 28px rgba(0, 163, 224, 0.35);
+  box-shadow: 0 10px 28px rgba(0, 160, 152, 0.28);
 }
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #fff;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--np-ink);
 }
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(0, 160, 152, 0.35);
+  background: rgba(0, 160, 152, 0.06);
 }
 .btn-orange {
   background: var(--np-orange);
@@ -509,28 +506,142 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 }
 
 .contact { padding: 12px 0 64px; }
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 14px;
+  align-items: stretch;
+}
+@media (max-width: 800px) {
+  .contact-wrap { grid-template-columns: 1fr; }
+}
 .contact-card {
-  border-radius: 32px;
-  padding: clamp(26px, 4vw, 40px);
-  background: linear-gradient(120deg, var(--np-blue) 0%, var(--np-blue-deep) 55%, #006994 100%);
+  border-radius: 28px;
+  padding: clamp(24px, 3.5vw, 36px);
+  background: linear-gradient(145deg, var(--np-teal) 0%, var(--np-teal-deep) 100%);
   color: #fff;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;
+  gap: 20px;
 }
 .contact-card h2 {
   margin: 0 0 6px;
-  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
   letter-spacing: -0.035em;
 }
-.contact-card p { margin: 0; opacity: 0.88; max-width: 34ch; }
-.contact-card .btn-ghost {
-  background: #fff;
-  color: var(--np-blue-deep);
-  border: 0;
+.contact-card > p { margin: 0; opacity: 0.9; max-width: 36ch; line-height: 1.4; }
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13.5px;
+  transition: background 0.2s, transform 0.2s;
+}
+.social-btn:hover { background: rgba(255, 255, 255, 0.22); }
+.social-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.social-btn.is-soon {
+  opacity: 0.72;
+  cursor: default;
+  position: relative;
+}
+.social-btn.is-soon::after {
+  content: "скоро";
+  margin-left: 2px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.contact-form-card {
+  border-radius: 28px;
+  padding: clamp(22px, 3vw, 32px);
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 36px rgba(0, 122, 116, 0.06);
+}
+.contact-form-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.contact-form-card .form-lead {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 520px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-field.full { grid-column: 1 / -1; }
+.form-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 14.5px;
+  color: var(--np-ink);
+  background: #fafbfc;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-field textarea { min-height: 110px; resize: vertical; }
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: rgba(0, 160, 152, 0.45);
+  box-shadow: 0 0 0 3px rgba(0, 160, 152, 0.12);
+  background: #fff;
+}
+.form-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.form-note {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.form-status {
+  margin: 10px 0 0;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: var(--np-teal-deep);
+  display: none;
+}
+.form-status.is-on { display: block; }
+.form-status.is-error { color: #b42318; }
 
 .foot {
   padding: 0 0 36px;

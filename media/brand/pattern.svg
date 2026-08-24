@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <!-- New People–inspired rhombus + dots, very light -->
+  <g fill="none" stroke="#00A098" stroke-width="1.2" opacity="1">
+    <path d="M30 10 L50 30 L30 50 L10 30 Z"/>
+    <path d="M90 70 L110 90 L90 110 L70 90 Z"/>
+  </g>
+  <g fill="#F5A623">
+    <circle cx="78" cy="28" r="2.2"/>
+    <circle cx="22" cy="88" r="1.8"/>
+  </g>
+  <g fill="#7AC143">
+    <circle cx="98" cy="48" r="1.6"/>
+    <circle cx="48" cy="98" r="2"/>
+  </g>
+  <g stroke="#00A098" stroke-width="1" fill="none" opacity="0.85">
+    <path d="M62 8 L70 16 L62 24 L54 16 Z"/>
+  </g>
+</svg>
