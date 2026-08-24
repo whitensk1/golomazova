@@ -12,12 +12,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=party12" />
+  <link rel="stylesheet" href="css/styles.css?v=party13" />
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
 
-  <!-- Меню справа, без фамилии, цвета партии -->
+  <!-- Меню слева — фото справа -->
   <nav class="nav" aria-label="Разделы">
     <a href="#about">О себе</a>
     <a href="#projects">Проекты</a>
@@ -26,51 +26,52 @@
   </nav>
 
   <main id="main">
-    <section class="hero" id="top">
-      <!-- Текст слева -->
-      <div class="hero-copy" data-parallax="copy">
-        <p class="hero-kicker"><span class="dot" aria-hidden="true"></span> Новые люди · кандидат в депутаты</p>
-        <h1>Виктория<br />Голомазова</h1>
-        <p class="hero-one">Соединяю людей, идеи и ресурсы — чтобы проекты становились делами.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Проекты</a>
-          <a class="btn btn-ghost" href="https://vk.ru/vic_project" target="_blank" rel="noopener">ВКонтакте</a>
+    <!-- Hero + факты — одна колонка по ширине -->
+    <div class="hero-stage" id="top">
+      <section class="hero">
+        <div class="hero-copy" data-parallax="copy">
+          <p class="hero-kicker"><span class="dot" aria-hidden="true"></span> Новые люди · кандидат в депутаты</p>
+          <h1>Виктория<br />Голомазова</h1>
+          <p class="hero-one">Соединяю людей, идеи и ресурсы — чтобы проекты становились делами.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Проекты</a>
+            <a class="btn btn-ghost" href="https://vk.ru/vic_project" target="_blank" rel="noopener">ВКонтакте</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Крупный портрет справа — исходное студийное фото, светлый фон -->
-      <div class="hero-figure" data-parallax="figure">
-        <img
-          src="media/photos/portrait-hero.jpg?v=studio1"
-          alt="Виктория Голомазова"
-          width="933"
-          height="1400"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
-    </section>
+        <div class="hero-figure" data-parallax="figure">
+          <img
+            src="media/photos/portrait-hero.jpg?v=studio1"
+            alt="Виктория Голомазова"
+            width="933"
+            height="1400"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      </section>
 
-    <div class="strip" aria-label="Коротко о Виктории">
-      <div class="strip-item">
-        <span class="strip-label">Возраст</span>
-        <b>22 года</b>
-        <span>Уже веду общественные проекты</span>
-      </div>
-      <div class="strip-item">
-        <span class="strip-label">Россия и Китай</span>
-        <b>Связываю на практике</b>
-        <span>Помогаю бизнесу и проектам снять барьеры</span>
-      </div>
-      <div class="strip-item">
-        <span class="strip-label">Что делаю</span>
-        <b>6 проектов</b>
-        <span>От обменов студентами до цифровых решений</span>
-      </div>
-      <div class="strip-item">
-        <span class="strip-label">Спорт</span>
-        <b>Лыжные гонки</b>
-        <span>Тренируюсь к сдаче норматива</span>
+      <div class="strip" aria-label="Коротко о Виктории">
+        <div class="strip-item">
+          <span class="strip-label">Возраст</span>
+          <b>22 года</b>
+          <span>Уже веду общественные проекты</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-label">Россия и Китай</span>
+          <b>Связываю на практике</b>
+          <span>Помогаю бизнесу и проектам снять барьеры</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-label">Что делаю</span>
+          <b>6 проектов</b>
+          <span>От обменов студентами до цифровых решений</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-label">Спорт</span>
+          <b>Лыжные гонки</b>
+          <span>Тренируюсь к сдаче норматива</span>
+        </div>
       </div>
     </div>
 

@@ -53,12 +53,12 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 }
 .skip:focus { left: 8px; top: 8px; }
 
-/* —— Nav: right-floating, party colors, no surname —— */
+/* —— Nav: left-floating (фото справа) —— */
 .nav {
   position: fixed;
   top: max(16px, env(safe-area-inset-top));
-  right: max(16px, env(safe-area-inset-right));
-  left: auto;
+  left: max(16px, env(safe-area-inset-left));
+  right: auto;
   z-index: 60;
   display: flex;
   align-items: center;
@@ -68,7 +68,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(0, 160, 152, 0.28);
   box-shadow:
-    0 10px 36px rgba(0, 130, 179, 0.14),
+    0 10px 36px rgba(0, 122, 116, 0.14),
     0 0 0 1px rgba(245, 166, 35, 0.12);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -92,11 +92,21 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 }
 .nav a.is-accent:hover { filter: brightness(1.05); color: #fff; }
 @media (max-width: 520px) {
-  .nav { right: 10px; left: 10px; justify-content: center; }
+  .nav { left: 10px; right: 10px; justify-content: center; }
   .nav a { padding: 10px 12px; font-size: 12.5px; }
 }
 
-/* —— Hero: text LEFT + large studio portrait RIGHT (light, matches photo) —— */
+/* —— Hero stage: фото + имя + факты — одна ширина —— */
+.hero-stage {
+  width: min(100%, var(--hero-max));
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 0 0 28px 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(26, 35, 50, 0.06);
+}
+
+/* —— Hero: text LEFT + large studio portrait RIGHT —— */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -108,19 +118,10 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   column-gap: clamp(16px, 3vw, 40px);
   padding-top: calc(var(--nav-h) + 28px);
   padding-bottom: 0;
-  padding-left: max(
-    20px,
-    env(safe-area-inset-left),
-    calc((100vw - var(--hero-max)) / 2 + 28px)
-  );
-  padding-right: max(
-    0px,
-    env(safe-area-inset-right),
-    calc((100vw - var(--hero-max)) / 2)
-  );
+  padding-left: max(20px, env(safe-area-inset-left));
+  padding-right: max(12px, env(safe-area-inset-right));
   overflow: hidden;
   color: var(--np-ink);
-  /* фон под студийное фото — светлый, без затемнения */
   background: #ffffff;
 }
 @media (max-width: 860px) {
@@ -136,6 +137,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
     padding-right: max(16px, env(safe-area-inset-right));
     padding-bottom: 0;
   }
+  .hero-stage { border-radius: 0 0 22px 22px; }
 }
 
 .hero-figure {
@@ -259,7 +261,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 .strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: linear-gradient(90deg, var(--np-blue) 0%, #0090c8 40%, var(--np-blue-deep) 100%);
+  width: 100%;
+  background: linear-gradient(90deg, var(--np-teal) 0%, #00b3aa 42%, var(--np-teal-deep) 100%);
   color: #fff;
 }
 @media (max-width: 720px) { .strip { grid-template-columns: 1fr 1fr; } }
@@ -268,6 +271,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   border-right: 1px solid rgba(255,255,255,0.15);
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
+.strip-item:last-child { border-right: 0; }
 .strip-label {
   display: block;
   font-size: 11px;
