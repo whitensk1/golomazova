@@ -12,8 +12,10 @@
   --font: "Inter", system-ui, -apple-system, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max: 1100px;
-  --hero-max: 1120px;   /* после этой ширины hero не растягивается */
-  --portrait-w: 440px;  /* жёсткий потолок портрета на широких экранах */
+  --hero-max: 1200px;   /* после этой ширины hero-контент не растягивается */
+  --portrait-w: 520px;  /* потолок портрета — крупнее, справа */
+  --hero-ink: #f4f7fb;
+  --hero-muted: rgba(244, 247, 251, 0.72);
   --nav-h: 56px;
 }
 
@@ -81,93 +83,114 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   .nav a { padding: 10px 12px; font-size: 12.5px; }
 }
 
-/* —— Hero: object portrait LEFT + text (parallax layers) —— */
+/* —— Hero: text LEFT + large black-studio portrait RIGHT —— */
 .hero {
   position: relative;
   min-height: 100svh;
   min-height: 100dvh;
   display: grid;
-  /* две колонки, но общая ширина контента ограничена --hero-max */
-  grid-template-columns: minmax(0, var(--portrait-w)) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--portrait-w));
+  grid-template-areas: "copy figure";
   align-items: end;
-  column-gap: clamp(12px, 3vw, 36px);
-  /* на экранах шире --hero-max контент «замирает» по центру */
-  padding-top: calc(var(--nav-h) + 36px);
-  padding-bottom: max(28px, env(safe-area-inset-bottom));
+  column-gap: clamp(16px, 3vw, 40px);
+  padding-top: calc(var(--nav-h) + 28px);
+  padding-bottom: 0;
   padding-left: max(
+    20px,
     env(safe-area-inset-left),
-    calc((100vw - var(--hero-max)) / 2 + 12px)
+    calc((100vw - var(--hero-max)) / 2 + 28px)
   );
   padding-right: max(
+    0px,
     env(safe-area-inset-right),
-    calc((100vw - var(--hero-max)) / 2 + 20px)
+    calc((100vw - var(--hero-max)) / 2)
   );
   overflow: hidden;
+  color: var(--hero-ink);
   background:
-    radial-gradient(ellipse 70% 55% at 85% 15%, rgba(0, 163, 224, 0.14), transparent 55%),
-    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(245, 166, 35, 0.1), transparent 50%),
-    radial-gradient(ellipse 40% 35% at 70% 70%, rgba(122, 193, 67, 0.08), transparent 50%),
-    var(--bg);
+    radial-gradient(ellipse 55% 50% at 78% 40%, rgba(0, 163, 224, 0.18), transparent 60%),
+    radial-gradient(ellipse 40% 35% at 20% 75%, rgba(245, 166, 35, 0.1), transparent 55%),
+    radial-gradient(ellipse 35% 30% at 55% 90%, rgba(122, 193, 67, 0.07), transparent 50%),
+    #050608;
 }
 @media (max-width: 860px) {
   .hero {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "figure"
+      "copy";
     align-items: start;
     min-height: auto;
-    padding-top: calc(var(--nav-h) + 28px);
+    padding-top: calc(var(--nav-h) + 20px);
     padding-left: max(16px, env(safe-area-inset-left));
     padding-right: max(16px, env(safe-area-inset-right));
+    padding-bottom: 0;
   }
 }
 
 .hero-figure {
+  grid-area: figure;
   position: relative;
   z-index: 2;
-  justify-self: start;
+  justify-self: end;
   align-self: end;
-  /* растёт с экраном только до --portrait-w, дальше статична */
   width: var(--portrait-w);
   max-width: 100%;
   will-change: transform;
+  pointer-events: none;
+}
+.hero-figure::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 70%;
+  height: 55%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(0, 163, 224, 0.35), transparent 70%);
+  filter: blur(28px);
+  z-index: -1;
   pointer-events: none;
 }
 .hero-figure img {
   width: 100%;
   max-width: var(--portrait-w);
   height: auto;
-  /* всегда целиком: без crop/zoom в лицо */
+  max-height: min(92svh, 920px);
   object-fit: contain;
   object-position: bottom center;
-  /* white studio cutout blends into page → reads as object */
-  filter: drop-shadow(0 28px 50px rgba(26, 35, 50, 0.18));
+  filter: drop-shadow(0 0 40px rgba(0, 163, 224, 0.12));
 }
 @media (max-width: 860px) {
   .hero-figure {
-    width: min(var(--portrait-w), 88vw);
-    max-width: min(var(--portrait-w), 88vw);
+    width: min(420px, 94vw);
+    max-width: min(420px, 94vw);
     margin: 0 auto;
-    order: -1;
+    justify-self: center;
   }
+  .hero-figure img { max-height: min(62svh, 560px); }
 }
 
 .hero-copy {
+  grid-area: copy;
   position: relative;
   z-index: 3;
   align-self: center;
-  padding: 12px 8px 24px 8px;
+  padding: 24px 8px 48px 0;
   will-change: transform, opacity;
-  max-width: 420px;
+  max-width: 460px;
 }
 @media (max-width: 860px) {
   .hero-copy {
     max-width: none;
     text-align: center;
     margin: 0 auto;
+    padding: 8px 8px 28px;
   }
   .hero-actions { justify-content: center; }
 }
 .hero-kicker {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -175,27 +198,27 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--np-blue-deep);
+  color: var(--np-blue);
 }
 .hero-kicker .dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--np-orange);
-  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.25);
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.28);
 }
 .hero h1 {
   margin: 0;
-  font-size: clamp(2.6rem, 7vw, 4.4rem);
+  font-size: clamp(2.7rem, 6.5vw, 4.5rem);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 0.96;
-  color: var(--np-ink);
+  color: #fff;
 }
 .hero-one {
-  margin: 14px 0 0;
-  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  margin: 16px 0 0;
+  font-size: clamp(1.05rem, 2.1vw, 1.28rem);
   font-weight: 550;
-  line-height: 1.35;
-  color: var(--muted);
+  line-height: 1.4;
+  color: var(--hero-muted);
   max-width: 28ch;
 }
 @media (max-width: 860px) {
@@ -205,7 +228,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 22px;
+  margin-top: 26px;
 }
 .btn {
   display: inline-flex;
@@ -220,12 +243,15 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 .btn-primary {
   background: linear-gradient(135deg, var(--np-blue), var(--np-blue-deep));
   color: #fff;
-  box-shadow: 0 10px 24px rgba(0, 163, 224, 0.28);
+  box-shadow: 0 10px 28px rgba(0, 163, 224, 0.35);
 }
 .btn-ghost {
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--np-ink);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 .btn-orange {
   background: var(--np-orange);
