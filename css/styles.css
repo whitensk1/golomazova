@@ -13,7 +13,7 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max: 1100px;
   --hero-max: 1200px;   /* после этой ширины hero-контент не растягивается */
-  --portrait-w: 520px;  /* потолок портрета — крупнее, справа */
+  --portrait-w: 560px;  /* потолок портрета — крупный поясной кадр справа */
   --hero-ink: #f4f7fb;
   --hero-muted: rgba(244, 247, 251, 0.72);
   --nav-h: 56px;
@@ -156,19 +156,19 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   width: 100%;
   max-width: var(--portrait-w);
   height: auto;
-  max-height: min(92svh, 920px);
+  max-height: min(88svh, 780px);
   object-fit: contain;
-  object-position: bottom center;
+  object-position: center bottom;
   filter: drop-shadow(0 0 40px rgba(0, 163, 224, 0.12));
 }
 @media (max-width: 860px) {
   .hero-figure {
-    width: min(420px, 94vw);
-    max-width: min(420px, 94vw);
+    width: min(440px, 92vw);
+    max-width: min(440px, 92vw);
     margin: 0 auto;
     justify-self: center;
   }
-  .hero-figure img { max-height: min(62svh, 560px); }
+  .hero-figure img { max-height: min(58svh, 520px); }
 }
 
 .hero-copy {
