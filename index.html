@@ -5,52 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Виктория Голомазова</title>
   <meta name="description" content="Виктория Голомазова — общественный деятель, член партии «Новые люди», кандидат в депутаты." />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0b0c0e" />
+  <meta name="theme-color" content="#00a3e0" />
   <link rel="canonical" href="https://whitensk1.github.io/golomazova/" />
   <meta property="og:title" content="Виктория Голомазова" />
-  <meta property="og:description" content="Общественный деятель · Новые люди · кандидат в депутаты" />
-  <meta property="og:type" content="website" />
+  <meta property="og:image" content="media/photos/portrait.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=youth2" />
-  <meta property="og:image" content="media/photos/portrait.jpg" />
+  <link rel="stylesheet" href="css/styles.css?v=party3" />
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
 
-  <header class="nav" id="top">
-    <a class="logo" href="#top">Голомазова</a>
-    <nav class="nav-links" aria-label="Меню">
-      <a href="#about">О себе</a>
-      <a href="#projects">Проекты</a>
-      <a href="#party">Партия</a>
-      <a class="nav-cta" href="https://vk.ru/vic_project" target="_blank" rel="noopener">Написать</a>
-    </nav>
-  </header>
+  <!-- Меню справа, без фамилии, цвета партии -->
+  <nav class="nav" aria-label="Разделы">
+    <a href="#about">О себе</a>
+    <a href="#projects">Проекты</a>
+    <a href="#party">Партия</a>
+    <a class="is-accent" href="https://vk.ru/vic_project" target="_blank" rel="noopener">Написать</a>
+  </nav>
 
   <main id="main">
-    <!-- Full photo first -->
-    <section class="hero" aria-label="Главный экран">
-      <div class="hero-media">
+    <section class="hero" id="top">
+      <!-- Объект-портрет (не фон): уходит медленнее текста -->
+      <div class="hero-figure" data-parallax="figure">
         <img
-          src="media/photos/portrait.jpg"
+          src="media/photos/portrait-cutout.jpg"
           alt="Виктория Голомазова"
-          width="1600"
-          height="2000"
+          width="832"
+          height="1248"
           fetchpriority="high"
           decoding="async"
         />
       </div>
-      <div class="hero-veil" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="hero-kicker">Новые люди · кандидат в депутаты</p>
+
+      <div class="hero-copy" data-parallax="copy">
+        <p class="hero-kicker"><span class="dot" aria-hidden="true"></span> Новые люди · кандидат в депутаты</p>
         <h1>Виктория<br />Голомазова</h1>
         <p class="hero-one">Соединяю людей, идеи и ресурсы — чтобы проекты становились делами.</p>
         <div class="hero-actions">
-          <a class="btn btn-light" href="#projects">Проекты</a>
-          <a class="btn btn-ghost-light" href="https://vk.ru/vic_project" target="_blank" rel="noopener">ВКонтакте</a>
+          <a class="btn btn-primary" href="#projects">Проекты</a>
+          <a class="btn btn-ghost" href="https://vk.ru/vic_project" target="_blank" rel="noopener">ВКонтакте</a>
         </div>
       </div>
     </section>
@@ -69,39 +64,45 @@
           <p>Коротко и по делу</p>
         </div>
         <div class="about-grid">
+          <div class="about-visual">
+            <img src="media/illustrations/about.jpg" alt="" width="1600" height="900" loading="lazy" decoding="async" />
+          </div>
           <div class="about-main">
             <p>Инвестиции, общественные проекты и помощь бизнесу в Китае.</p>
-            <a class="btn btn-light" style="background:var(--ink);color:#fff;align-self:flex-start" href="#contact">Связаться</a>
+            <a class="btn btn-primary" style="align-self:flex-start" href="#contact">Связаться</a>
           </div>
-          <div class="about-side">
-            <div class="pill-card">
-              <h3>Фокус</h3>
-              <p>Масштабные полезные проекты и «министерство добрых дел»</p>
-            </div>
-            <div class="pill-card">
-              <h3>Спорт</h3>
-              <p>Готовлюсь к нормативу по лыжным гонкам</p>
-            </div>
+        </div>
+        <div class="about-side">
+          <div class="pill-card orange">
+            <h3>Фокус</h3>
+            <p>Масштабные проекты и «министерство добрых дел»</p>
+          </div>
+          <div class="pill-card green">
+            <h3>Спорт</h3>
+            <p>Готовлюсь к нормативу по лыжным гонкам</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects" style="padding-top:12px">
+    <section class="section" id="projects" style="padding-top:8px">
       <div class="container">
         <div class="section-head">
           <h2>Проекты</h2>
           <p>Крупные блоки — что делаю</p>
         </div>
+        <div class="projects-visual">
+          <img src="media/illustrations/projects.jpg" alt="" width="1600" height="700" loading="lazy" decoding="async" />
+        </div>
         <div class="bento">
-          <article class="tile wide">
+          <article class="tile wide blue">
             <div class="n">01</div>
             <div>
               <h3>Студенческий обмен</h3>
               <p>С гарантией трудоустройства и стажировками</p>
             </div>
           </article>
-          <article class="tile accent">
+          <article class="tile orange">
             <div class="n">02</div>
             <div>
               <h3>Культурно-деловой центр Китая</h3>
@@ -115,7 +116,7 @@
               <p>Город-побратим</p>
             </div>
           </article>
-          <article class="tile">
+          <article class="tile green">
             <div class="n">04</div>
             <div>
               <h3>Прозрачность депутатов</h3>
@@ -129,7 +130,7 @@
               <p>Беспилотники для гражданских задач</p>
             </div>
           </article>
-          <article class="tile wide">
+          <article class="tile wide blue">
             <div class="n">06</div>
             <div>
               <h3>Бизнес с Китаем</h3>
@@ -143,14 +144,14 @@
     <section class="section" id="party">
       <div class="container party-row">
         <div class="party-card">
-          <img class="party-logo" src="media/brand/newpeople-logo.jpg" alt="Логотип партии «Новые люди»" width="280" height="160" loading="lazy" decoding="async" />
+          <img class="party-logo" src="media/brand/newpeople-logo.jpg" alt="Логотип партии «Новые люди»" width="280" height="160" loading="lazy" />
           <h2>Новые люди</h2>
-          <p>Член партии. На сайте — про Викторию; официальная программа и материалы партии — по ссылкам рядом.</p>
+          <p>Член партии. Акцент сайта — на Виктории; официальная программа партии — по ссылкам.</p>
         </div>
         <div class="party-links">
           <a href="https://newpeople.ru/" target="_blank" rel="noopener">Сайт партии <span>→</span></a>
           <a class="soft" href="https://newpeople.ru/program" target="_blank" rel="noopener">Программа <span>→</span></a>
-          <a class="soft" href="https://vk.ru/party.newpeople" target="_blank" rel="noopener">Партия в VK <span>→</span></a>
+          <a class="soft orange-edge" href="https://vk.ru/party.newpeople" target="_blank" rel="noopener">Партия в VK <span>→</span></a>
         </div>
       </div>
     </section>
@@ -162,14 +163,14 @@
             <h2>Давайте на связь</h2>
             <p>Проекты, общественная работа, сотрудничество — напишите в VK.</p>
           </div>
-          <a class="btn btn-light" href="https://vk.ru/vic_project" target="_blank" rel="noopener">Открыть VK</a>
+          <a class="btn btn-ghost" href="https://vk.ru/vic_project" target="_blank" rel="noopener">Открыть VK</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="foot">
-    <div class="container foot-inner">
+    <div class="foot-inner">
       <div>© Виктория Голомазова</div>
       <div>
         <a href="https://vk.ru/vic_project" target="_blank" rel="noopener">VK</a>
@@ -178,5 +179,7 @@
       </div>
     </div>
   </footer>
+
+  <script src="js/parallax.js?v=1" defer></script>
 </body>
 </html>
