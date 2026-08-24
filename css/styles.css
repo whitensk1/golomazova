@@ -224,25 +224,35 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 }
 @media (max-width: 720px) { .strip { grid-template-columns: 1fr 1fr; } }
 .strip-item {
-  padding: 18px 16px 20px;
+  padding: 16px 16px 18px;
   border-right: 1px solid rgba(255,255,255,0.15);
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
+.strip-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.72;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
 .strip-item b {
   display: block;
-  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.2;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
-.strip-item span {
+.strip-item > span:not(.strip-label) {
   display: block;
   font-size: 13px;
-  opacity: 0.88;
+  opacity: 0.9;
   font-weight: 550;
   line-height: 1.35;
-  max-width: 22ch;
+  max-width: 24ch;
 }
 
 .section { padding: 56px 0; }
