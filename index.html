@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=youth1" />
+  <link rel="stylesheet" href="css/styles.css?v=youth2" />
+  <meta property="og:image" content="media/photos/portrait.jpg" />
 </head>
 <body>
   <a class="skip" href="#main">К содержанию</a>
@@ -33,9 +34,14 @@
     <!-- Full photo first -->
     <section class="hero" aria-label="Главный экран">
       <div class="hero-media">
-        <!-- Положите портрет сюда: media/photos/portrait.jpg -->
-        <!-- <img src="media/photos/portrait.jpg" alt="Виктория Голомазова" width="1600" height="2000" fetchpriority="high" /> -->
-        <div class="ph">Пришлите фото — поставлю сюда крупно<br /><span style="opacity:.7">или скачайте аватар с VK: vic_project</span></div>
+        <img
+          src="media/photos/portrait.jpg"
+          alt="Виктория Голомазова"
+          width="1600"
+          height="2000"
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
       <div class="hero-veil" aria-hidden="true"></div>
       <div class="hero-copy">
@@ -137,6 +143,7 @@
     <section class="section" id="party">
       <div class="container party-row">
         <div class="party-card">
+          <img class="party-logo" src="media/brand/newpeople-logo.jpg" alt="Логотип партии «Новые люди»" width="280" height="160" loading="lazy" decoding="async" />
           <h2>Новые люди</h2>
           <p>Член партии. На сайте — про Викторию; официальная программа и материалы партии — по ссылкам рядом.</p>
         </div>
