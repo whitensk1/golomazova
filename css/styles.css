@@ -382,24 +382,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   line-height: 1.3;
 }
 
-/* Projects */
-.projects-visual {
-  border-radius: 28px;
-  overflow: hidden;
-  margin-bottom: 16px;
-  border: 1px solid var(--line);
-  aspect-ratio: 21 / 8;
-  background: #fff;
-  box-shadow: 0 12px 36px rgba(0, 130, 179, 0.08);
-}
-@media (max-width: 640px) {
-  .projects-visual { aspect-ratio: 16 / 9; }
-}
-.projects-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* Projects — each tile has its own illustration */
 .bento {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -408,14 +391,13 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
 .tile {
   grid-column: span 2;
   border-radius: 26px;
-  padding: 20px;
+  padding: 0;
+  overflow: hidden;
   background: #fff;
   border: 1px solid var(--line);
-  min-height: 150px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
   transition: transform 0.25s var(--ease), box-shadow 0.25s;
 }
 .tile:hover {
@@ -423,24 +405,51 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   box-shadow: 0 14px 36px rgba(0, 130, 179, 0.1);
 }
 .tile.wide { grid-column: span 3; }
+.tile-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #eef3f8;
+}
+.tile-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s var(--ease);
+}
+.tile:hover .tile-media img { transform: scale(1.04); }
+.tile-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  flex: 1;
+}
 .tile.blue {
+  border: 0;
+  box-shadow: 0 10px 28px rgba(0, 130, 179, 0.12);
+}
+.tile.blue .tile-body {
   background: linear-gradient(145deg, var(--np-blue), var(--np-blue-deep));
-  color: #fff; border: 0;
+  color: #fff;
 }
-.tile.orange {
+.tile.orange { border: 0; }
+.tile.orange .tile-body {
   background: linear-gradient(145deg, #ffb84a, var(--np-orange));
-  color: #fff; border: 0;
+  color: #fff;
 }
-.tile.green {
+.tile.green { border: 0; }
+.tile.green .tile-body {
   background: linear-gradient(145deg, #8fd65a, var(--np-green));
-  color: #fff; border: 0;
+  color: #fff;
 }
 .tile .n {
   font-size: 11px; font-weight: 800; letter-spacing: 0.12em; opacity: 0.55;
 }
 .tile h3 {
   margin: 0;
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
   font-weight: 800;
   letter-spacing: -0.025em;
   line-height: 1.15;
