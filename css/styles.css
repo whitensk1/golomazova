@@ -12,6 +12,8 @@
   --font: "Inter", system-ui, -apple-system, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --max: 1100px;
+  --hero-max: 1120px;   /* после этой ширины hero не растягивается */
+  --portrait-w: 440px;  /* жёсткий потолок портрета на широких экранах */
   --nav-h: 56px;
 }
 
@@ -85,14 +87,21 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   min-height: 100svh;
   min-height: 100dvh;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  /* две колонки, но общая ширина контента ограничена --hero-max */
+  grid-template-columns: minmax(0, var(--portrait-w)) minmax(0, 1fr);
   align-items: end;
-  gap: 12px;
-  padding:
-    calc(var(--nav-h) + 36px)
-    max(20px, env(safe-area-inset-right))
-    max(28px, env(safe-area-inset-bottom))
-    max(12px, env(safe-area-inset-left));
+  column-gap: clamp(12px, 3vw, 36px);
+  /* на экранах шире --hero-max контент «замирает» по центру */
+  padding-top: calc(var(--nav-h) + 36px);
+  padding-bottom: max(28px, env(safe-area-inset-bottom));
+  padding-left: max(
+    env(safe-area-inset-left),
+    calc((100vw - var(--hero-max)) / 2 + 12px)
+  );
+  padding-right: max(
+    env(safe-area-inset-right),
+    calc((100vw - var(--hero-max)) / 2 + 20px)
+  );
   overflow: hidden;
   background:
     radial-gradient(ellipse 70% 55% at 85% 15%, rgba(0, 163, 224, 0.14), transparent 55%),
@@ -106,6 +115,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
     align-items: start;
     min-height: auto;
     padding-top: calc(var(--nav-h) + 28px);
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
   }
 }
 
@@ -114,20 +125,26 @@ button { font: inherit; border: 0; background: none; cursor: pointer; }
   z-index: 2;
   justify-self: start;
   align-self: end;
-  width: min(520px, 100%);
-  margin-left: -2vw;
+  /* растёт с экраном только до --portrait-w, дальше статична */
+  width: var(--portrait-w);
+  max-width: 100%;
   will-change: transform;
   pointer-events: none;
 }
 .hero-figure img {
   width: 100%;
+  max-width: var(--portrait-w);
   height: auto;
+  /* всегда целиком: без crop/zoom в лицо */
+  object-fit: contain;
+  object-position: bottom center;
   /* white studio cutout blends into page → reads as object */
   filter: drop-shadow(0 28px 50px rgba(26, 35, 50, 0.18));
 }
 @media (max-width: 860px) {
   .hero-figure {
-    width: min(380px, 88vw);
+    width: min(var(--portrait-w), 88vw);
+    max-width: min(var(--portrait-w), 88vw);
     margin: 0 auto;
     order: -1;
   }
